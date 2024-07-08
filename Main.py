@@ -15,7 +15,41 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def time_stone(): 
+    def minutes_to_seconds(minutes):
+        return minutes * 60
+    
+    def hours_to_seconds(hours):
+        return hours * 3600
+    
+    def seconds_in_a_day():
+        return 24 * hours_to_seconds(1)
+    
+    def hours_in_june():
+        return 30 * 24
+    
+    def minutes_in_august():
+        return 31 * 24 * 60
+    
+    def minutes_in_days():
+        return 24 * 60
+    
+    def minutes_in_weeks():
+        return 7 * minutes_in_days()
+    
+    def how_do_you_measure_a_year():
+        return minutes_in_days() * 3
+    
+    print("1 minute =", minutes_to_seconds(1), "seconds")
+    print("5 minutes =", minutes_to_seconds(5), "seconds")
+    print("1 hour =", hours_to_seconds(1), "seconds")
+    print("seconds in a day:", seconds_in_a_day())
+    print("hours in june:", hours_in_june())
+    print("minutes in august:", minutes_in_august())
+    print("minutes in weeks:", minutes_in_weeks())
+    print ("minutes in a day:", minutes_in_days())
+    print("midnights and sunsets:", how_do_you_measure_a_year())
+time_stone()
 # ---------------------------------
 
 
@@ -27,7 +61,15 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def mid(k):
+    length = len(k)
+    if length % 2 == 0:
+        return ""
+    else:
+        middle = length // 2
+        return k[middle]
+print(mid("abc"))
+print(mid("kass"))
 # ---------------------------------
 
 
@@ -36,7 +78,12 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def credit_card():
+    card_number = input('enter your card number').strip()
+    hide_number = len(card_number)-4
+    hidden_card = '*' * hide_number + card_number[-4:]
+    return hidden_card
+print("card:", credit_card())
 # ---------------------------------
 
 
@@ -62,7 +109,20 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def online_count():
+    statuses = {
+        "John": "online",
+        "Paul": "offline",
+        "George": "online",
+        "Ringo": "offline"
+    }
+    count = 0
+    for status in statuses.values():
+        if status == "online":
+            count += 1 
+    return count
+print(online_count())
+
 # ---------------------------------
 
 
@@ -72,7 +132,14 @@
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
 # ---------------------------------
-#      Solution Goes Here ->
+def calculate_discount(full_price, discount):
+    discount_total = (full_price * discount) / 100
+    discounted = full_price - discount_total
+    return discounted
+original_price = int(input("enter the original price of the item: "))
+discount_percent = int(input("enter the discount percentage: "))
+discounted_price = calculate_discount(original_price, discount_percent)
+print(f'The discounted price is: {discounted_price}')
 # ---------------------------------
 
 
@@ -83,7 +150,12 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def calculate_hypotenuse(adjacent, opposite):
+    hypotenuse = (adjacent ** 2 + opposite ** 2) ** 0.5
+    return hypotenuse
+print('hyp1:', calculate_hypotenuse(3, 4))
+print('hyp2:', calculate_hypotenuse(5, 12))
+
 # ---------------------------------
 
 
@@ -96,5 +168,16 @@
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
 # ---------------------------------
-#      Solution Goes Here ->
+def fibonacci(purple, blue):
+    fibonacci_list = [purple, blue]
+    for _ in range(2, 11): 
+        next_number = fibonacci_list[-1] + fibonacci_list[-2]
+        fibonacci_list.append(next_number)
+    return fibonacci_list
+purple = int(input("whats the first number to start the Fibonacci sequence: "))
+blue = int(input("whats the second number to start the Fibonacci sequence: "))
+fib_sequence = fibonacci(purple, blue)
+print(f"here are the next intervals in the Fibonacci sequence starting with {purple} and {blue}:")
+print(fib_sequence)
+
 # ---------------------------------
